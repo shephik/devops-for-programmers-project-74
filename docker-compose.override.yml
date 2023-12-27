@@ -1,16 +1,17 @@
 services:
   app:
-    # extends:
-    #   file: docker-compose.yml
-    #   service: app
-    build:
-      context: .
-      dockerfile: Dockerfile
+    extends:
+      file: docker-compose.yml
+      service: app
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
     ports:
       - 8080:8080
     volumes:
       - "./app:/app"  
-    command: npm run dev
+    # command: "sleep 3 && npm start"
+    command: "npm start"
 
   caddy:
     image: caddy:2

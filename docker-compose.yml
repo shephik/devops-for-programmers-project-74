@@ -7,9 +7,22 @@ services:
       context: .
       dockerfile: Dockerfile.production
     image: shephik/devops-for-programmers-project-74  
-    command: npm test
+    volumes:
+      - "./app/.env.example:/app/.env"
+    command: npm test  
+    depends_on:
+      - db 
 
   production:
     build:
       context: .
       dockerfile: Dockerfile
+
+  db:
+    image: postgres:latest
+    restart: always
+    # env_file:
+    #   - ./app/.env
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "password" 

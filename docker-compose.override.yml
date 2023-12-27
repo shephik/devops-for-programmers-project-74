@@ -1,11 +1,11 @@
 services:
   app:
-    extends:
-      file: docker-compose.yml
-      service: app
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile
+    # extends:
+    #   file: docker-compose.yml
+    #   service: app
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - 8080:8080
     volumes:

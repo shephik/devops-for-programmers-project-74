@@ -18,4 +18,4 @@ docker-build:
 	docker-compose -f docker-compose.yml build app
 
 docker-push:
-	docker-compose -f docker-compose.yml push shephik/devops-for-programmers-project-74:latest
+	docker-compose -f docker-compose.yml push app

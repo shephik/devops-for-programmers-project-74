@@ -8,8 +8,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4  
 
+      - run: make setup
       - run: make ci
-      - run: make docker-test
       - run: make docker-build
 
       - name: Login to DockerHub

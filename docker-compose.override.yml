@@ -1,8 +1,5 @@
 services:
   app:
-    # extends:
-    #   file: docker-compose.yml
-    #   service: app
     build:
       context: .
       dockerfile: Dockerfile
@@ -10,8 +7,7 @@ services:
       - 8080:8080
     volumes:
       - "./app:/app"  
-    # command: "sleep 3 && npm start"
-    command: "npm start"
+    command: "sleep 3 && npm start"
 
   caddy:
     image: caddy:2
